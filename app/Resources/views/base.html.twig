@@ -7,6 +7,7 @@
         <link rel="shortcut icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
+        <a href="{{ path('SiteSiteBundle_homepage') }}">Add site</a> | <a href="{{ path('SiteSiteBundle_sites_list') }}">List</a>
         {% block body %}{% endblock %}
         {% block javascripts %}{% endblock %}
     </body>

@@ -1,0 +1,33 @@
+{% extends '::base.html.twig' %}
+{% block body %}
+    <table class="" border="1" cellpadding="0" cellspacing="0" width="100%">
+        {% for item in paginator %}
+        <tr>
+            <td>
+                {{item.name}}
+            </td>
+            <td>
+                {{item.url}}
+            </td>
+            <td>
+                {% if item.isactive%}Yes{%else%}No{% endif %}
+            </td>
+            <td>
+                {{item.createdat|date('Y-m-d H:i:s')}}
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+
+    {% if paginator.haveToPaginate %}
+        <div class="pagination">
+            {% for paginator_page in paginator.getLinks() %}
+                {% if (paginator_page == paginator.getPage()) %}
+                    <span class="active_page">{{ paginator_page }}</span>
+                {% else %}
+                    <a href="{{ path('SiteSiteBundle_sites_list') }}?page={{ paginator_page }}">{{ paginator_page }}</a>
+                {% endif %}
+            {% endfor %}
+        </div>
+    {% endif %}
+{% endblock %}

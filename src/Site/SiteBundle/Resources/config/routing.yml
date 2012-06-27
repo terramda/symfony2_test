@@ -1,0 +1,6 @@
+SiteSiteBundle_homepage:
+    pattern:  /add-sites
+    defaults: { _controller: SiteSiteBundle:Default:index }
+SiteSiteBundle_sites_list:
+    pattern:  /list
+    defaults: { _controller: SiteSiteBundle:Default:display }
